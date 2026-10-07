@@ -1119,6 +1119,29 @@ h2.h2wide{max-width:none;white-space:nowrap}
 @media (hover:none) and (pointer:coarse){ .hint{display:none} }
 @keyframes rotph{0%,15%{transform:rotate(0)}45%,70%{transform:rotate(-90deg)}100%{transform:rotate(-90deg)}}
 @media (prefers-reduced-motion:reduce){.rot-ph{animation:none;transform:rotate(-90deg)}}
+/* CRM: теги и голосовой фильтр */
+.crm{display:grid;grid-template-columns:1fr 44px 1fr;align-items:stretch;margin-top:6px}
+.crm .wg-arr{align-self:center}
+.crm-feed{padding:28px 30px;display:flex;flex-direction:column;gap:14px}
+.crm-ev{display:grid;grid-template-columns:1fr 28px 236px;align-items:center;gap:12px;padding:15px 18px;border-radius:16px;background:var(--soft)}
+.crm-ev span{font-size:22px;color:var(--ink);line-height:1.3}
+.crm-ev i{font-style:normal;color:var(--mute);font-size:22px;text-align:center}
+.crm-ev em,.crm-flt em{font-style:normal;padding:8px 14px;border-radius:999px;background:var(--blue-soft);color:var(--blue-ink);font-size:19px;font-weight:650;white-space:nowrap}
+.crm-ev em::before,.crm-flt em::before{content:"# ";opacity:.55}
+.crm-ask{padding:28px 30px;display:flex;flex-direction:column;gap:18px}
+.crm-voice{display:flex;align-items:center;gap:16px;padding:18px 22px;border-radius:22px 22px 6px 22px;background:var(--blue-soft)}
+.crm-voice p{margin:0;font-size:24px;line-height:1.35;color:var(--ink);font-weight:500}
+.crm-mic{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:var(--paper)}
+.crm-mic svg.i{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.crm-res{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;border-radius:16px;border:1px solid var(--line)}
+.crm-flt{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.crm-flt span{font-size:19px;color:var(--mute);font-weight:600}
+.crm-flt em.off{background:var(--soft);color:var(--ink2);text-decoration:line-through;text-decoration-thickness:2px}
+.crm-n{display:flex;flex-direction:column;align-items:flex-end;flex:none}
+.crm-n b{font-size:30px;font-weight:800;letter-spacing:-.01em;color:var(--ink)}
+.crm-n span{font-size:17px;color:var(--mute)}
+.crm-btn{margin-top:auto;font-size:23px;padding:18px}
+.crm-ev em{justify-self:start}
 
 
 .uflow{position:relative;width:1680px;height:580px;align-self:center}
@@ -1219,7 +1242,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="hand" data-a="hand" style="--d:12.950000000000001s;position:absolute;left:880px;top:498px">клиента передают из рук в руки</div>
     </div>
   </div>
-  <div class="pager">2 / 26</div>
+  <div class="pager">2 / 27</div>
 </div></section>
 <!-- 3. Проблема: менеджеры -->
 <section class="frame"><div class="slide dark has-voice">
@@ -1240,7 +1263,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="hand " data-a="hand" style="--d:7.4s;text-wrap:balance">а работают не всегда хорошо</div>
     </div>
   </div>
-  <div class="pager">3 / 26</div>
+  <div class="pager">3 / 27</div>
 </div></section>
 
 <!-- 4b. Проблема: справочное бюро -->
@@ -1264,7 +1287,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="hand " data-a="hand" style="--d:7.2s;text-wrap:balance">всё зависит от человека</div>
     </div>
   </div>
-  <div class="pager">4 / 26</div>
+  <div class="pager">4 / 27</div>
 </div></section>
 
 <!-- 4c. Проблема: сервисы -->
@@ -1285,7 +1308,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="hand " data-a="hand" style="--d:5.8s;text-wrap:balance">чем больше база, тем больше платите</div>
     </div>
   </div>
-  <div class="pager">5 / 26</div>
+  <div class="pager">5 / 27</div>
 </div></section>
 
 <!-- 5. Проблема: техспец -->
@@ -1311,7 +1334,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="hand " data-a="hand" style="--d:6.4s;margin-top:26px">пока чинят, клиент ждёт</div>
     </div>
   </div>
-  <div class="pager">6 / 26</div>
+  <div class="pager">6 / 27</div>
 </div></section>
 
 <!-- 5b. Проблема: техспец уволился -->
@@ -1334,7 +1357,7 @@ html.static .side path,html.static .route path{opacity:1!important}
     </div>
     <div class="hand " data-a="hand" style="--d:7s;margin-top:56px">а клиенты всё это время пишут в воронку</div>
   </div>
-  <div class="pager">7 / 26</div>
+  <div class="pager">7 / 27</div>
 </div></section>
 
 <!-- 2. Что теряется: одинаковый дожим -->
@@ -1360,7 +1383,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="hand " data-a="hand" style="--d:6.8s;">рассылка вслепую</div>
     </div>
   </div>
-  <div class="pager">8 / 26</div>
+  <div class="pager">8 / 27</div>
 </div></section>
 
 <!-- 7. Проблема: аналитика -->
@@ -1382,7 +1405,7 @@ html.static .side path,html.static .route path{opacity:1!important}
     </div>
     <div class="hand " data-a="hand" style="--d:4.6s;margin-top:30px">где проседает, никто не знает</div>
   </div>
-  <div class="pager">9 / 26</div>
+  <div class="pager">9 / 27</div>
 </div></section>
 
 <!-- 2. Как сейчас -->
@@ -1410,7 +1433,7 @@ html.static .side path,html.static .route path{opacity:1!important}
     </div>
     <svg class="tangle" data-from="3.9"></svg>
   </div>
-  <div class="pager">10 / 26</div>
+  <div class="pager">10 / 27</div>
 </div></section>
 
 <!-- 2d. Решение: диалог -->
@@ -1423,7 +1446,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="drow"><div class="dq" data-a="fu" style="--d:1.4s;"><span class="dav"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></span><span class="dqt">«Без сервисов и новых сотрудников?»</span></div><div class="da" data-a="fu" style="--d:1.9s;"><p>Да. Ни за какие сервисы платить больше не нужно. И не нужно держать на окладе:</p><div class="dchips"><span>специалистов по настройке</span><span>менеджеров по продажам</span><span>даже руководителя отдела продаж</span></div></div></div><div class="drow"><div class="dq" data-a="fu" style="--d:2.5999999999999996s;"><span class="dav"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></span><span class="dqt">«А кто будет этим управлять?»</span></div><div class="da" data-a="fu" style="--d:3.0999999999999996s;">Один человек: эксперт, продюсер или управляющий</div></div><div class="drow"><div class="dq" data-a="fu" style="--d:3.8s;"><span class="dav"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></span><span class="dqt">«А если он технически не подкован?»</span></div><div class="da" data-a="fu" style="--d:4.3s;"><p>Достаточно сказать человеческим языком, чего вы хотите. Система сама отвечает и продаёт каждому клиенту персонально. Смотрит:</p><div class="dchips"><span>какие лид‑магниты он брал</span><span>что писал в директ</span><span>как вёл с вами переписку</span></div><p>И делает ему точный оффер.</p><p class="dsub">А вам даёт глубокую аналитику по всем показателям</p></div></div><div class="drow"><div class="dq" data-a="fu" style="--d:5s;"><span class="dav"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></span><span class="dqt">«И сколько это стоит?»</span></div><div class="da" data-a="fu" style="--d:5.5s;">Не дороже подписки на Claude в месяц</div></div><div class="drow"><div class="dq" data-a="fu" style="--d:6.199999999999999s;"><span class="dav"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></span><span class="dqt">«А как это сделать?»</span></div><div class="da last" data-a="fu" style="--d:6.699999999999999s;">Сейчас покажу</div></div>
     </div>
   </div>
-  <div class="pager">11 / 26</div>
+  <div class="pager">11 / 27</div>
 </div></section>
 
 <!-- 2e. Всё сходится в один отдел -->
@@ -1445,7 +1468,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       </div>
     </div>
   </div>
-  <div class="pager">12 / 26</div>
+  <div class="pager">12 / 27</div>
 </div></section>
 
 <!-- 2g. Знает про клиента всё -->
@@ -1481,7 +1504,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div data-a="fu" style="--d:6s;"><b>Гипотезы по аккаунту.</b> Система разбирает профиль человека в Instagram и Telegram и подсказывает, как с ним работать дальше</div>
     </div>
   </div>
-  <div class="pager">13 / 26</div>
+  <div class="pager">13 / 27</div>
 </div></section>
 
 <!-- 5. На что опирается ИИ -->
@@ -1513,7 +1536,7 @@ html.static .side path,html.static .route path{opacity:1!important}
     </div>
   </div>
   <div class="ban kb2-ban" data-a="fu" style="--d:3.1s;"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg>ИИ‑продавец ничего не выдумывает: цены, кейсы, сроки и срочность берёт только из базы</div>
-  <div class="pager">14 / 26</div>
+  <div class="pager">14 / 27</div>
 </div></section>
 
 <!-- 15b. Возврат -->
@@ -1542,7 +1565,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="stamp good" data-a="stamp" style="--d:8.4s;right:40px;bottom:36px">ответ готов сразу</div>
     </div>
   </div>
-  <div class="pager">15 / 26</div>
+  <div class="pager">15 / 27</div>
 </div></section>
 
 <!-- 2b. Сначала тренируем -->
@@ -1580,7 +1603,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="tx-it"><span class="obj-n">1</span><div><b>По умолчанию пишет не как ИИ</b><p>Такой скилл в него уже заложен</p></div></div>
       <div class="tx-it"><span class="obj-n">2</span><div><b>И в любом случае обучаем</b><p>Учим отвечать в вашем стиле максимально корректно</p></div></div>
   </div>
-  <div class="pager">16 / 26</div>
+  <div class="pager">16 / 27</div>
 </div></section>
 
 <!-- 6. Стратегия, потом текст -->
@@ -1613,7 +1636,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <p style="font-size:16px;color:var(--mute);margin-top:16px">Пример по мотивам настоящего варианта, имя изменено</p>
     </div>
   </div>
-  <div class="pager">17 / 26</div>
+  <div class="pager">17 / 27</div>
 </div></section>
 
 <!-- 7. Решает команда -->
@@ -1641,7 +1664,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       </div>
     </div>
   </div>
-  <div class="pager">18 / 26</div>
+  <div class="pager">18 / 27</div>
 </div></section>
 
 <!-- 8. Как учится -->
@@ -1675,7 +1698,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       </div>
     </div>
   </div>
-  <div class="pager">19 / 26</div>
+  <div class="pager">19 / 27</div>
 </div></section>
 
 <!-- 15. Автопилот -->
@@ -1689,7 +1712,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="panel lv" style="height:100%"><div class="cap">Уровень 3</div><h4>Полный цикл до оплаты</h4><p>ИИ ведёт человека от кодового слова до счёта. Тех, у кого доход выше порога, передаёт на созвон с напоминанием накануне.</p></div>
     </div>
   </div>
-  <div class="pager">20 / 26</div>
+  <div class="pager">20 / 27</div>
 </div></section>
 
 <!-- 9. Приоритет -->
@@ -1715,7 +1738,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="leaf"><div class="cond">денег пока нет</div><div class="panel res"><b>Прогрев</b>присылает, что посмотреть, и сам пишет снова через нужное время</div></div>
     </div>
   </div>
-  <div class="pager">21 / 26</div>
+  <div class="pager">21 / 27</div>
 </div></section>
 
 <!-- 10. Последнее слово -->
@@ -1741,12 +1764,41 @@ html.static .side path,html.static .route path{opacity:1!important}
     </div>
     <div class="wg-res">Человек быстрее принимает решение, и время до сделки сокращается</div>
   </div>
-  <div class="pager">22 / 26</div>
+  <div class="pager">22 / 27</div>
+</div></section>
+
+<!-- 10a. CRM -->
+<section class="frame"><div class="slide">
+  <div class="top"><span class="step"><span class="num">22</span><b>CRM</b></span><span></span></div>
+  <h2 style="max-width:none">CRM сама проставляет теги, когда человек сделал любое действие</h2>
+  <p class="h2sub">Всегда можно сделать любую фильтрацию и рассылку. Просто скажите голосом, кого ищете</p>
+  <div class="body" style="flex-direction:column">
+    <div class="crm">
+      <div class="panel crm-feed">
+        <div class="cap">Действие человека → тег в карточке</div>
+        <div class="crm-ev"><span>Скачал чек‑лист</span><i>→</i><em>чек‑лист</em></div>
+        <div class="crm-ev"><span>Досмотрел вебинар до конца</span><i>→</i><em>досмотрел вебинар</em></div>
+        <div class="crm-ev"><span>Открыл ссылку на оплату</span><i>→</i><em>смотрел оплату</em></div>
+        <div class="crm-ev"><span>Спросил про рассрочку</span><i>→</i><em>рассрочка</em></div>
+      </div>
+      <div class="wg-arr">→</div>
+      <div class="panel crm-ask">
+        <div class="cap">Вы говорите голосом</div>
+        <div class="crm-voice"><span class="crm-mic"><svg class="i" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg></span><p>«Найди всех, кто досмотрел вебинар, но&nbsp;не&nbsp;оплатил»</p></div>
+        <div class="crm-res">
+          <div class="crm-flt"><em>досмотрел вебинар</em><span>без</span><em class="off">оплатил</em></div>
+          <div class="crm-n"><b>37 человек</b><span>нашлись за секунду</span></div>
+        </div>
+        <div class="btn pri crm-btn">Сделать рассылку</div>
+      </div>
+    </div>
+  </div>
+  <div class="pager">23 / 27</div>
 </div></section>
 
 <!-- 10b. Служба заботы -->
 <section class="frame"><div class="slide">
-  <div class="top"><span class="step"><span class="num">22</span><b>Служба заботы</b></span><span></span></div>
+  <div class="top"><span class="step"><span class="num">23</span><b>Служба заботы</b></span><span></span></div>
   <h2 style="max-width:none">Если у клиента что‑то не пришло или не открылось, система сама ставит задачу</h2>
   <p class="h2sub">После вашего одобрения ИИ‑продавец чинит воронку и сам переписывается с человеком</p>
   <div class="body" style="flex-direction:column">
@@ -1764,12 +1816,12 @@ html.static .side path,html.static .route path{opacity:1!important}
     </div>
     <div class="wg-res">Как служба заботы: сбой исправлен, а человек получил то, что ждал</div>
   </div>
-  <div class="pager">23 / 26</div>
+  <div class="pager">24 / 27</div>
 </div></section>
 
 <!-- 12. Дашборд -->
 <section class="frame"><div class="slide">
-  <div class="top"><span class="step"><span class="num">23</span><b>Дашборд</b></span><span>Пример данных · уникальные люди</span></div>
+  <div class="top"><span class="step"><span class="num">24</span><b>Дашборд</b></span><span>Пример данных · уникальные люди</span></div>
   <h2 style="font-size:56px">Каждое утро система сама разбирает вчерашний день и говорит, что усилить</h2>
   <p class="h2sub">Анализ на реальных данных обо всех клиентах за день и за прошлый этап</p>
   <div class="panel funnel" style="margin-top:26px">
@@ -1791,12 +1843,12 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="mchips"><span>Изменить воронку</span><span>Поправить анкету</span><span>Подправить оффер</span><span>На какую тему снимать больше контента</span></div>
       <p>Совет на каждый этап. Внедрили — отмечаете кнопкой «Внедрено»</p></div>
   </div>
-  <div class="pager">24 / 26</div>
+  <div class="pager">25 / 27</div>
 </div></section>
 
 <!-- 11. Клиенты и доработки -->
 <section class="frame"><div class="slide">
-  <div class="top"><span class="step"><span class="num">24</span><b>Не только продажи</b></span><span></span></div>
+  <div class="top"><span class="step"><span class="num">25</span><b>Не только продажи</b></span><span></span></div>
   <h2 style="max-width:none">По такой же схеме можно настроить техотдел, службу заботы на курсе и допродажи</h2>
   <div class="body" style="flex-direction:column">
     <div class="panel rws">
@@ -1805,7 +1857,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="rw"><span class="rw-ic"><svg class="i" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span><b class="rw-t">Допродажи</b><p class="rw-p">Опираясь на <b>все домашки, разборы и комментарии</b> на платформе, понимает, кому из учеников <b>какой следующий продукт подходит</b>. Предлагает его исходя из <b>конкретных результатов, запросов и сложностей</b>, которые возникли у человека в момент обучения</p></div>
     </div>
   </div>
-  <div class="pager">25 / 26</div>
+  <div class="pager">26 / 27</div>
 </div></section>
 
 <!-- 16. Итог -->
@@ -1822,7 +1874,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="panel out"><div class="cap">Забота</div><h4>Сбои не стоят вам клиентов</h4><p>Что не пришло или не открылось, чинится, а человек получает своё. По той же схеме работают техотдел и допродажи</p></div>
     </div>
   </div>
-  <div class="pager">26 / 26</div>
+  <div class="pager">27 / 27</div>
 </div></section>
 
 </div>
