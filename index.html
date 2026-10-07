@@ -1097,6 +1097,28 @@ h2.h2wide{max-width:none;white-space:nowrap}
 .cover h1{font-size:76px;max-width:900px}
 .cover .lead{margin-top:30px}
 .cov-pts{margin-top:38px}
+/* ---------- телефон ---------- */
+@supports (height:100svh){
+  .frame{width:min(100vw,177.78svh);margin:calc((100svh - min(100vw,177.78svh)*0.5625)/2) auto}
+  .deck{min-height:100svh}
+}
+.rot{display:none}
+@media (hover:none) and (pointer:coarse) and (orientation:portrait){
+  html:not(.vmode) .rot{display:grid;position:fixed;inset:0;z-index:50;place-items:center;padding:32px;background:oklch(0.2 0.03 262);color:oklch(0.97 0.006 262);text-align:center;font-family:Inter,system-ui,sans-serif}
+  .rot-in{max-width:320px;display:flex;flex-direction:column;align-items:center;gap:16px}
+  .rot-ph{width:84px;height:84px;color:oklch(0.72 0.15 262);animation:rotph 2.4s cubic-bezier(.22,1,.36,1) infinite}
+  .rot b{font-size:26px;font-weight:800;letter-spacing:-.02em}
+  .rot p{margin:0;font-size:16px;line-height:1.5;color:oklch(0.82 0.02 262)}
+  .rot button{margin-top:12px;font:600 15px Inter,system-ui,sans-serif;color:oklch(0.85 0.04 262);background:none;border:1px solid oklch(0.45 0.05 262);border-radius:999px;padding:12px 22px;min-height:44px}
+  html:not(.vmode){overflow:hidden}
+  /* вертикальный просмотр: слайды лентой, без пустых полей */
+  html.vmode{scroll-snap-type:none}
+  html.vmode .deck{min-height:0;gap:10px;padding:10px 0}
+  html.vmode .frame{width:100vw;margin:0 auto}
+}
+@media (hover:none) and (pointer:coarse){ .hint{display:none} }
+@keyframes rotph{0%,15%{transform:rotate(0)}45%,70%{transform:rotate(-90deg)}100%{transform:rotate(-90deg)}}
+@media (prefers-reduced-motion:reduce){.rot-ph{animation:none;transform:rotate(-90deg)}}
 
 
 .uflow{position:relative;width:1680px;height:580px;align-self:center}
@@ -1828,6 +1850,14 @@ addEventListener('keydown',e=>{
   const root=document.documentElement;
   const isStatic=/static/.test(location.search);
   if(isStatic)root.classList.add('static');
+  // телефон в вертикальном положении: предлагаем перевернуть экран
+  if(!isStatic){
+    const ov=document.createElement('div');ov.className='rot';
+    ov.innerHTML='<div class="rot-in"><svg class="rot-ph" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="8" width="24" height="44" rx="5"/><path d="M29 46h6"/></svg><b>Поверните телефон</b><p>Презентация сделана для горизонтального экрана. Так слайды будут крупными и читаемыми</p><button type="button">Смотреть вертикально</button></div>';
+    document.body.appendChild(ov);
+    if(sessionStorage.getItem('vmode'))root.classList.add('vmode');
+    ov.querySelector('button').addEventListener('click',()=>{root.classList.add('vmode');sessionStorage.setItem('vmode','1')});
+  }
   const sec=v=>parseFloat(v)||0;
 
   // слайды механики без своей разметки: ставим появление по порядку
