@@ -1119,29 +1119,41 @@ h2.h2wide{max-width:none;white-space:nowrap}
 @media (hover:none) and (pointer:coarse){ .hint{display:none} }
 @keyframes rotph{0%,15%{transform:rotate(0)}45%,70%{transform:rotate(-90deg)}100%{transform:rotate(-90deg)}}
 @media (prefers-reduced-motion:reduce){.rot-ph{animation:none;transform:rotate(-90deg)}}
-/* CRM: теги и голосовой фильтр */
-.crm{display:grid;grid-template-columns:1fr 44px 1fr;align-items:stretch;margin-top:6px}
-.crm .wg-arr{align-self:center}
-.crm-feed{padding:28px 30px;display:flex;flex-direction:column;gap:14px}
-.crm-ev{display:grid;grid-template-columns:1fr 28px 236px;align-items:center;gap:12px;padding:15px 18px;border-radius:16px;background:var(--soft)}
-.crm-ev span{font-size:22px;color:var(--ink);line-height:1.3}
-.crm-ev i{font-style:normal;color:var(--mute);font-size:22px;text-align:center}
-.crm-ev em,.crm-flt em{font-style:normal;padding:8px 14px;border-radius:999px;background:var(--blue-soft);color:var(--blue-ink);font-size:19px;font-weight:650;white-space:nowrap}
-.crm-ev em::before,.crm-flt em::before{content:"# ";opacity:.55}
-.crm-ask{padding:28px 30px;display:flex;flex-direction:column;gap:18px}
-.crm-voice{display:flex;align-items:center;gap:16px;padding:18px 22px;border-radius:22px 22px 6px 22px;background:var(--blue-soft)}
-.crm-voice p{margin:0;font-size:24px;line-height:1.35;color:var(--ink);font-weight:500}
-.crm-mic{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:var(--paper)}
-.crm-mic svg.i{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.crm-res{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;border-radius:16px;border:1px solid var(--line)}
-.crm-flt{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.crm-flt span{font-size:19px;color:var(--mute);font-weight:600}
-.crm-flt em.off{background:var(--soft);color:var(--ink2);text-decoration:line-through;text-decoration-thickness:2px}
-.crm-n{display:flex;flex-direction:column;align-items:flex-end;flex:none}
-.crm-n b{font-size:30px;font-weight:800;letter-spacing:-.01em;color:var(--ink)}
-.crm-n span{font-size:17px;color:var(--mute)}
-.crm-btn{margin-top:auto;font-size:23px;padding:18px}
-.crm-ev em{justify-self:start}
+/* CRM: окно с тегами и голосовым фильтром */
+.crm-win{padding:0;overflow:hidden;margin-top:4px}
+.crm-bar{display:flex;align-items:center;gap:18px;padding:18px 22px;border-bottom:1px solid var(--line)}
+.crm-q{flex:1;display:flex;align-items:center;gap:14px;padding:8px 20px 8px 8px;border-radius:999px;background:var(--soft);min-height:56px}
+.crm-qt{font-size:22px;color:var(--ink);font-weight:500}
+.crm-mic{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:var(--paper)}
+.crm-mic svg.i{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.crm-found{display:flex;flex-direction:column;align-items:flex-end;line-height:1.1}
+.crm-found b{font-size:26px;font-weight:800;letter-spacing:-.01em}
+.crm-found span{font-size:16px;color:var(--mute)}
+.crm-btn{padding:14px 24px;font-size:20px;white-space:nowrap}
+.crm-flt{display:flex;align-items:center;gap:10px;padding:12px 22px;background:oklch(0.975 0.008 262);border-bottom:1px solid var(--line)}
+.crm-flt span{font-size:17px;color:var(--mute);font-weight:600}
+.crm-tbl{padding:4px 12px 10px}
+.crm-head,.crm-row{display:grid;grid-template-columns:270px 240px 360px 1fr;align-items:center;gap:16px;padding:0 14px}
+.crm-head{height:44px;font-size:15px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;color:var(--mute)}
+.crm-row{height:62px;border-radius:14px}
+.crm-row+.crm-row{box-shadow:inset 0 1px 0 var(--line)}
+.crm-who{display:flex;align-items:center;gap:12px}
+.crm-who b{font-size:20px;font-weight:600}
+.crm-av{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:var(--paper);font-size:16px;font-weight:700}
+.crm-ch{display:flex;align-items:center;gap:8px;font-size:18px;color:var(--ink2)}
+.crm-ch .dot{width:10px;height:10px}
+.crm-act{font-size:18px;color:var(--ink2)}
+.crm-tags{display:flex;gap:8px;flex-wrap:nowrap}
+.crm-tags em,.crm-flt em{font-style:normal;padding:6px 12px;border-radius:999px;background:var(--soft);color:var(--ink2);font-size:16px;font-weight:600;white-space:nowrap}
+.crm-tags em::before,.crm-flt em::before{content:"# ";opacity:.5}
+.crm-tags em.new,.crm-flt em{background:var(--blue-soft);color:var(--blue-ink)}
+.crm-flt em.off{background:var(--paper);border:1px solid var(--line);color:var(--ink2);text-decoration:line-through;text-decoration-thickness:2px}
+.frame.on .crm-row[data-a=crm-hit]{animation:fu .7s var(--ease) var(--d) both,crmhit .6s var(--ease) var(--d2) forwards}
+.frame.on .crm-row[data-a=crm-miss]{animation:fu .7s var(--ease) var(--d) both,crmmiss .6s var(--ease) var(--d2) forwards}
+@keyframes crmhit{to{background:oklch(0.955 0.03 262)}}
+@keyframes crmmiss{to{opacity:.32}}
+html.static .frame .crm-row[data-a=crm-hit]{background:oklch(0.955 0.03 262)}
+html.static .frame .crm-row[data-a=crm-miss]{opacity:.32}
 
 
 .uflow{position:relative;width:1680px;height:580px;align-self:center}
@@ -1770,26 +1782,23 @@ html.static .side path,html.static .route path{opacity:1!important}
 <!-- 10a. CRM -->
 <section class="frame"><div class="slide">
   <div class="top"><span class="step"><span class="num">22</span><b>CRM</b></span><span></span></div>
-  <h2 style="max-width:none">CRM сама проставляет теги, когда человек сделал любое действие</h2>
-  <p class="h2sub">Всегда можно сделать любую фильтрацию и рассылку. Просто скажите голосом, кого ищете</p>
+  <h2 style="max-width:none" data-a="fu" style="--d:0.2s;">CRM сама проставляет теги, когда человек сделал любое действие</h2>
+  <p class="h2sub" data-a="fu" style="--d:0.45s;">Всегда можно сделать любую фильтрацию и рассылку. Просто скажите голосом, кого ищете</p>
   <div class="body" style="flex-direction:column">
-    <div class="crm">
-      <div class="panel crm-feed">
-        <div class="cap">Действие человека → тег в карточке</div>
-        <div class="crm-ev"><span>Скачал чек‑лист</span><i>→</i><em>чек‑лист</em></div>
-        <div class="crm-ev"><span>Досмотрел вебинар до конца</span><i>→</i><em>досмотрел вебинар</em></div>
-        <div class="crm-ev"><span>Открыл ссылку на оплату</span><i>→</i><em>смотрел оплату</em></div>
-        <div class="crm-ev"><span>Спросил про рассрочку</span><i>→</i><em>рассрочка</em></div>
+    <div class="panel crm-win" data-a="fu" style="--d:0.8s;">
+      <div class="crm-bar">
+        <div class="crm-q"><span class="crm-mic"><svg class="i" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg></span><span class="crm-qt" data-type style="--d:3s">Найди всех, кто досмотрел вебинар, но не оплатил</span></div>
+        <div class="crm-found" data-a="fu" style="--d:4.9s;"><b>37 человек</b><span>нашлось</span></div>
+        <div class="btn pri crm-btn" data-a="pop" style="--d:5.1s;">Сделать рассылку</div>
       </div>
-      <div class="wg-arr">→</div>
-      <div class="panel crm-ask">
-        <div class="cap">Вы говорите голосом</div>
-        <div class="crm-voice"><span class="crm-mic"><svg class="i" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg></span><p>«Найди всех, кто досмотрел вебинар, но&nbsp;не&nbsp;оплатил»</p></div>
-        <div class="crm-res">
-          <div class="crm-flt"><em>досмотрел вебинар</em><span>без</span><em class="off">оплатил</em></div>
-          <div class="crm-n"><b>37 человек</b><span>нашлись за секунду</span></div>
-        </div>
-        <div class="btn pri crm-btn">Сделать рассылку</div>
+      <div class="crm-flt" data-a="fu" style="--d:4.5s;"><span>Фильтр</span><em>досмотрел вебинар</em><span>без</span><em class="off">оплатил</em></div>
+      <div class="crm-tbl">
+        <div class="crm-head" data-a="fu" style="--d:1s;"><span>Клиент</span><span>Канал</span><span>Последнее действие</span><span>Теги</span></div>
+        <div class="crm-row hit" data-a="crm-hit" style="--d:1.2s;--d2:4.7s"><div class="crm-who"><span class="crm-av" style="background:var(--c-ig)">М</span><b>Марина К.</b></div><div class="crm-ch"><i class="dot" style="background:var(--c-ig)"></i>Директ Instagram</div><div class="crm-act">Досмотрела вебинар до конца</div><div class="crm-tags"><em>чек‑лист</em><em class="new" data-a="pop" style="--d:2s;">досмотрел вебинар</em></div></div>
+        <div class="crm-row" data-a="crm-miss" style="--d:1.3199999999999998s;--d2:4.7s"><div class="crm-who"><span class="crm-av" style="background:var(--c-tg)">О</span><b>Олег С.</b></div><div class="crm-ch"><i class="dot" style="background:var(--c-tg)"></i>Telegram</div><div class="crm-act">Оплатил курс</div><div class="crm-tags"><em>досмотрел вебинар</em><em class="new" data-a="pop" style="--d:2.18s;">оплатил</em></div></div>
+        <div class="crm-row hit" data-a="crm-hit" style="--d:1.44s;--d2:4.7s"><div class="crm-who"><span class="crm-av" style="background:var(--c-bt)">А</span><b>Анна П.</b></div><div class="crm-ch"><i class="dot" style="background:var(--c-bt)"></i>Бот</div><div class="crm-act">Открыла ссылку на оплату</div><div class="crm-tags"><em>досмотрел вебинар</em><em class="new" data-a="pop" style="--d:2.36s;">смотрел оплату</em></div></div>
+        <div class="crm-row" data-a="crm-miss" style="--d:1.56s;--d2:4.7s"><div class="crm-who"><span class="crm-av" style="background:var(--c-tg)">И</span><b>Ирина Л.</b></div><div class="crm-ch"><i class="dot" style="background:var(--c-tg)"></i>Telegram</div><div class="crm-act">Спросила про рассрочку</div><div class="crm-tags"><em>чек‑лист</em><em class="new" data-a="pop" style="--d:2.54s;">рассрочка</em></div></div>
+        <div class="crm-row hit" data-a="crm-hit" style="--d:1.68s;--d2:4.7s"><div class="crm-who"><span class="crm-av" style="background:var(--c-ig)">Д</span><b>Дмитрий В.</b></div><div class="crm-ch"><i class="dot" style="background:var(--c-ig)"></i>Директ Instagram</div><div class="crm-act">Досмотрел вебинар до конца</div><div class="crm-tags"><em class="new" data-a="pop" style="--d:2.7199999999999998s;">досмотрел вебинар</em></div></div>
       </div>
     </div>
   </div>
