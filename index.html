@@ -1405,7 +1405,7 @@ html.static .side path,html.static .route path{opacity:1!important}
     <div class="panel svc" data-a="fu" style="--d:2.5s;">
       <div class="cap">Платите каждый месяц</div>
       <div class="svc-list"><span data-node data-a="pop" style="--d:2.8s;">GetCourse</span><span data-node data-a="pop" style="--d:2.92s;">SaleBot</span><span data-node data-a="pop" style="--d:3.04s;">BotHelp</span><span data-node data-a="pop" style="--d:3.1599999999999997s;">ManyChat</span><span data-node data-a="pop" style="--d:3.28s;">amoCRM</span><span data-node data-a="pop" style="--d:3.4s;">Сервис рассылок</span><span data-node data-a="pop" style="--d:3.5199999999999996s;">Таблицы и отчёты</span></div>
-      <div class="svc-cons"><div data-a="fu" style="--d:4.6s;">Куча расходов: платите всем каждый месяц и&nbsp;каждую неделю</div><div data-a="fu" style="--d:4.949999999999999s;">Работает неэффективно</div><div data-a="fu" style="--d:5.3s;">Показатели не&nbsp;оцифрованы, этим невозможно управлять</div><div data-a="fu" style="--d:5.6499999999999995s;">Клиент получает не&nbsp;лучший опыт</div></div>
+      <div class="svc-cons"><div data-a="fu" style="--d:4.6s;">Куча расходов: платите всем каждый месяц и&nbsp;каждую неделю</div><div data-a="fu" style="--d:4.949999999999999s;">Работает неэффективно</div><div data-a="fu" style="--d:5.3s;">Показатели не&nbsp;оцифрованы, этим невозможно управлять</div><div data-a="fu" style="--d:5.6499999999999995s;">Клиент получает не&nbsp;лучший опыт</div><div data-a="fu" style="--d:6s;">Теряются сообщения между соцсетями и&nbsp;CRM</div></div>
       <div class="hand " data-a="hand" style="--d:6.4s;margin-top:14px">всё в одном клубке</div>
     </div>
     <svg class="tangle" data-from="3.9"></svg>
@@ -1856,7 +1856,7 @@ addEventListener('keydown',e=>{
     ov.innerHTML='<div class="rot-in"><svg class="rot-ph" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="8" width="24" height="44" rx="5"/><path d="M29 46h6"/></svg><b>Поверните телефон</b><p>Презентация сделана для горизонтального экрана. Так слайды будут крупными и читаемыми</p><button type="button">Смотреть вертикально</button></div>';
     document.body.appendChild(ov);
     if(sessionStorage.getItem('vmode'))root.classList.add('vmode');
-    ov.querySelector('button').addEventListener('click',()=>{root.classList.add('vmode');sessionStorage.setItem('vmode','1')});
+    ov.querySelector('button').addEventListener('click',()=>{root.classList.add('vmode');sessionStorage.setItem('vmode','1');dispatchEvent(new Event('vmode'))});
   }
   const sec=v=>parseFloat(v)||0;
 
@@ -1929,6 +1929,15 @@ addEventListener('keydown',e=>{
     else if(en.intersectionRatio<.2&&f.classList.contains('on')){f.classList.remove('on','noanim');reset(f)}
   }),{threshold:[0,.2,.6,1]});
   frames.forEach(f=>io.observe(f));
+  // при повороте телефона остаёмся на том же слайде
+  let cur=0,lock=0,lw=innerWidth;
+  const pick=()=>{const c=innerHeight/2;let b=0,bd=1e9;frames.forEach((f,i)=>{const r=f.getBoundingClientRect(),d=Math.abs(r.top+r.height/2-c);if(d<bd){bd=d;b=i}});return b};
+  addEventListener('scroll',()=>{if(Date.now()>lock)cur=pick()},{passive:true});
+  addEventListener('load',()=>{cur=pick()});
+  const keep=()=>{lock=Date.now()+900;const f=frames[cur];const go=()=>{if(typeof fit==='function')fit();const r=f.getBoundingClientRect();scrollTo({top:scrollY+r.top+r.height/2-innerHeight/2,behavior:'instant'})};requestAnimationFrame(go);setTimeout(go,300);setTimeout(go,700)};
+  addEventListener('resize',()=>{if(innerWidth!==lw){lw=innerWidth;keep()}});
+  addEventListener('orientationchange',()=>{lw=-1});
+  addEventListener('vmode',keep);
 })();
 
 </script>
