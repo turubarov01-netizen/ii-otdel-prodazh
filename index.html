@@ -1155,6 +1155,75 @@ h2.h2wide{max-width:none;white-space:nowrap}
 html.static .frame .crm-row[data-a=crm-hit]{background:oklch(0.955 0.03 262)}
 html.static .frame .crm-row[data-a=crm-miss]{opacity:.32}
 
+/* Выгоды: мини-история в три кадра */
+.st-body{flex-direction:column;margin-top:48px}
+.st{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;position:relative;flex:1;min-height:0}
+.st:before{content:"";position:absolute;left:12px;right:0;top:12px;height:3px;border-radius:3px;background:var(--line)}
+.st-b{display:flex;flex-direction:column;min-height:0}
+.st-w span{background:var(--bg);padding-right:14px;position:relative;z-index:1}
+.st-w{display:flex;align-items:center;gap:14px;font-size:18px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue-ink)}
+.st-w i{width:27px;height:27px;border-radius:50%;background:var(--paper);border:4px solid var(--blue);position:relative;z-index:1;flex:none}
+.st-b.st-end .st-w i{background:var(--blue)}
+.st-s{font-size:27px;font-weight:700;line-height:1.25;color:var(--ink);margin:14px 0 18px;min-height:2.5em;text-wrap:pretty}
+.st-c{flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:30px 32px;position:relative}
+.st-b.st-end .st-c{border:2px solid var(--blue)}
+.st-c .bub{font-size:25px;padding:16px 22px;max-width:none;align-self:flex-start}
+.st-c .bub.outb{align-self:flex-end}
+.st-lab{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:600;color:var(--mute)}
+.st-lab .lg{width:22px;height:22px}
+.st-chips{display:flex;flex-wrap:wrap;gap:8px}
+.st-chips span{font-size:18px;font-weight:600;padding:8px 13px;border-radius:10px;background:var(--soft);color:var(--ink2)}
+.st-x{text-decoration:line-through 2px;text-decoration-color:transparent}
+.frame.on .st-x{animation:strk .6s var(--ease) var(--sd) forwards}
+html.static .st-x{text-decoration-color:oklch(0.62 0.18 28);color:var(--mute)}
+.st-ok,.st-sent,.st-saved{display:flex;align-items:center;gap:12px;font-size:22px;font-weight:600;color:var(--ink)}
+.st-ok-i{width:26px;height:26px;flex:none;color:var(--green);stroke:var(--green)}
+.st-saved{font-size:19px;color:oklch(0.42 0.12 150);background:var(--green-soft);padding:10px 14px;border-radius:12px;align-self:flex-start}
+.st-sent{padding:14px 16px;border-radius:14px;background:var(--green-soft)}
+.st-big{margin:auto 0;display:flex;flex-direction:column;gap:4px}
+.st-big span{font-size:22px;color:var(--ink2);font-weight:600}
+.st-big b{font-size:72px;line-height:1;font-weight:800;letter-spacing:-.03em;color:var(--blue-ink)}
+.st-note{display:flex;flex-direction:column;gap:8px;padding:16px 18px;border-radius:16px;background:var(--blue-soft)}
+.st-note b{font-size:22px;line-height:1.35;color:var(--blue-ink)}
+.st-who{display:flex;align-items:center;gap:14px;margin:auto 0}
+.st-who .crm-av{width:56px;height:56px}
+.st-who .crm-av svg{width:28px;height:28px;stroke:var(--paper)}
+.st-who b{display:block;font-size:24px}
+.st-who span{font-size:19px;color:var(--ink2)}
+.st-in{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:16px;background:var(--soft)}
+.st-in.top{background:var(--blue-soft)}
+.st-in b{display:block;font-size:21px}
+.st-in span{font-size:17px;color:var(--ink2)}
+.st-in em{font-style:normal;margin-left:8px;vertical-align:3px;font-size:16px;font-weight:700;color:var(--paper);background:var(--blue);padding:5px 10px;border-radius:8px}
+.st-meter{height:10px;border-radius:6px;background:var(--soft);overflow:hidden}
+.st-meter i{display:block;height:100%;border-radius:6px;background:var(--blue)}
+.st-p{font-size:19px;line-height:1.4;color:var(--ink2)}
+.st-p.st-red{color:var(--red);font-weight:600}
+.st-gen{font-size:21px;padding:12px 16px;border-radius:14px;background:var(--soft);color:var(--ink2);align-self:flex-start}
+.st-fn{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:baseline}
+.st-fn span{font-size:19px;color:var(--ink2)}
+.st-fn b{font-size:22px}
+.st-fn .st-meter{grid-column:1/-1}
+.st-fn.bad b{color:var(--red)} .st-fn.bad .st-meter i{background:var(--red)}
+.st-fn.good b{color:oklch(0.45 0.13 150)} .st-fn.good .st-meter i{background:var(--green)}
+.st-btn{align-self:flex-start;padding:12px 22px;font-size:19px}
+.st-c .sz-loop{margin-top:0}
+.st-cond{margin-top:22px}
+
+.st-c .cap{font-size:17px}
+.st-chips span{font-size:20px}
+.st-ok,.st-sent{font-size:25px}
+.st-lab{font-size:19px}
+.st-fn span{font-size:21px} .st-fn b{font-size:26px}
+.st-p{font-size:21px}
+.st-note b{font-size:25px}
+.st-in b{font-size:23px} .st-in span{font-size:19px}
+.st-who b{font-size:27px} .st-who span{font-size:21px}
+.st-in>div{flex:1;min-width:0;text-align:left}
+.st-in .crm-av{color:var(--paper);font-size:17px;flex:none;width:40px;height:40px}
+.st-in em{display:inline-block}
+.st-in b{font-weight:700;color:var(--ink)}
+
 
 .uflow{position:relative;width:1680px;height:580px;align-self:center}
 .uflow>svg{position:absolute;left:0;top:0;overflow:visible;pointer-events:none}
@@ -1253,7 +1322,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="hand" data-a="hand" style="--d:12.950000000000001s;position:absolute;left:880px;top:498px">клиента передают из рук в руки</div>
     </div>
   </div>
-  <div class="pager">2 / 27</div>
+  <div class="pager">2 / 33</div>
 </div></section>
 <!-- 3. Проблема: менеджеры -->
 <section class="frame"><div class="slide dark has-voice">
@@ -1274,7 +1343,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="hand " data-a="hand" style="--d:7.4s;text-wrap:balance">а работают не всегда хорошо</div>
     </div>
   </div>
-  <div class="pager">3 / 27</div>
+  <div class="pager">3 / 33</div>
 </div></section>
 
 <!-- 4b. Проблема: справочное бюро -->
@@ -1298,7 +1367,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="hand " data-a="hand" style="--d:7.2s;text-wrap:balance">всё зависит от человека</div>
     </div>
   </div>
-  <div class="pager">4 / 27</div>
+  <div class="pager">4 / 33</div>
 </div></section>
 
 <!-- 4c. Проблема: сервисы -->
@@ -1319,7 +1388,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="hand " data-a="hand" style="--d:5.8s;text-wrap:balance">чем больше база, тем больше платите</div>
     </div>
   </div>
-  <div class="pager">5 / 27</div>
+  <div class="pager">5 / 33</div>
 </div></section>
 
 <!-- 5. Проблема: техспец -->
@@ -1345,7 +1414,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="hand " data-a="hand" style="--d:6.4s;margin-top:26px">пока чинят, клиент ждёт</div>
     </div>
   </div>
-  <div class="pager">6 / 27</div>
+  <div class="pager">6 / 33</div>
 </div></section>
 
 <!-- 5b. Проблема: техспец уволился -->
@@ -1368,7 +1437,7 @@ html.static .side path,html.static .route path{opacity:1!important}
     </div>
     <div class="hand " data-a="hand" style="--d:7s;margin-top:56px">а клиенты всё это время пишут в воронку</div>
   </div>
-  <div class="pager">7 / 27</div>
+  <div class="pager">7 / 33</div>
 </div></section>
 
 <!-- 2. Что теряется: одинаковый дожим -->
@@ -1394,7 +1463,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="hand " data-a="hand" style="--d:6.8s;">рассылка вслепую</div>
     </div>
   </div>
-  <div class="pager">8 / 27</div>
+  <div class="pager">8 / 33</div>
 </div></section>
 
 <!-- 7. Проблема: аналитика -->
@@ -1416,7 +1485,7 @@ html.static .side path,html.static .route path{opacity:1!important}
     </div>
     <div class="hand " data-a="hand" style="--d:4.6s;margin-top:30px">где проседает, никто не знает</div>
   </div>
-  <div class="pager">9 / 27</div>
+  <div class="pager">9 / 33</div>
 </div></section>
 
 <!-- 2. Как сейчас -->
@@ -1444,7 +1513,7 @@ html.static .side path,html.static .route path{opacity:1!important}
     </div>
     <svg class="tangle" data-from="3.9"></svg>
   </div>
-  <div class="pager">10 / 27</div>
+  <div class="pager">10 / 33</div>
 </div></section>
 
 <!-- 2d. Решение: диалог -->
@@ -1457,7 +1526,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="drow"><div class="dq" data-a="fu" style="--d:1.4s;"><span class="dav"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></span><span class="dqt">«Без сервисов и новых сотрудников?»</span></div><div class="da" data-a="fu" style="--d:1.9s;"><p>Да. Ни за какие сервисы платить больше не нужно. И не нужно держать на окладе:</p><div class="dchips"><span>специалистов по настройке</span><span>менеджеров по продажам</span><span>даже руководителя отдела продаж</span></div></div></div><div class="drow"><div class="dq" data-a="fu" style="--d:2.5999999999999996s;"><span class="dav"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></span><span class="dqt">«А кто будет этим управлять?»</span></div><div class="da" data-a="fu" style="--d:3.0999999999999996s;">Один человек: эксперт, продюсер или управляющий</div></div><div class="drow"><div class="dq" data-a="fu" style="--d:3.8s;"><span class="dav"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></span><span class="dqt">«А если он технически не подкован?»</span></div><div class="da" data-a="fu" style="--d:4.3s;"><p>Достаточно сказать человеческим языком, чего вы хотите. Система сама отвечает и продаёт каждому клиенту персонально. Смотрит:</p><div class="dchips"><span>какие лид‑магниты он брал</span><span>что писал в директ</span><span>как вёл с вами переписку</span></div><p>И делает ему точный оффер.</p><p class="dsub">А вам даёт глубокую аналитику по всем показателям</p></div></div><div class="drow"><div class="dq" data-a="fu" style="--d:5s;"><span class="dav"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></span><span class="dqt">«И сколько это стоит?»</span></div><div class="da" data-a="fu" style="--d:5.5s;">Не дороже подписки на Claude в месяц</div></div><div class="drow"><div class="dq" data-a="fu" style="--d:6.199999999999999s;"><span class="dav"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></span><span class="dqt">«А как это сделать?»</span></div><div class="da last" data-a="fu" style="--d:6.699999999999999s;">Сейчас покажу</div></div>
     </div>
   </div>
-  <div class="pager">11 / 27</div>
+  <div class="pager">11 / 33</div>
 </div></section>
 
 <!-- 2e. Всё сходится в один отдел -->
@@ -1479,7 +1548,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       </div>
     </div>
   </div>
-  <div class="pager">12 / 27</div>
+  <div class="pager">12 / 33</div>
 </div></section>
 
 <!-- 2g. Знает про клиента всё -->
@@ -1515,7 +1584,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div data-a="fu" style="--d:6s;"><b>Гипотезы по аккаунту.</b> Система разбирает профиль человека в Instagram и Telegram и подсказывает, как с ним работать дальше</div>
     </div>
   </div>
-  <div class="pager">13 / 27</div>
+  <div class="pager">13 / 33</div>
 </div></section>
 
 <!-- 5. На что опирается ИИ -->
@@ -1547,7 +1616,7 @@ html.static .side path,html.static .route path{opacity:1!important}
     </div>
   </div>
   <div class="ban kb2-ban" data-a="fu" style="--d:3.1s;"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg>ИИ‑продавец ничего не выдумывает: цены, кейсы, сроки и срочность берёт только из базы</div>
-  <div class="pager">14 / 27</div>
+  <div class="pager">14 / 33</div>
 </div></section>
 
 <!-- 15b. Возврат -->
@@ -1576,7 +1645,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="stamp good" data-a="stamp" style="--d:8.4s;right:40px;bottom:36px">ответ готов сразу</div>
     </div>
   </div>
-  <div class="pager">15 / 27</div>
+  <div class="pager">15 / 33</div>
 </div></section>
 
 <!-- 2b. Сначала тренируем -->
@@ -1614,7 +1683,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="tx-it"><span class="obj-n">1</span><div><b>По умолчанию пишет не как ИИ</b><p>Такой скилл в него уже заложен</p></div></div>
       <div class="tx-it"><span class="obj-n">2</span><div><b>И в любом случае обучаем</b><p>Учим отвечать в вашем стиле максимально корректно</p></div></div>
   </div>
-  <div class="pager">16 / 27</div>
+  <div class="pager">16 / 33</div>
 </div></section>
 
 <!-- 6. Стратегия, потом текст -->
@@ -1647,7 +1716,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <p style="font-size:16px;color:var(--mute);margin-top:16px">Пример по мотивам настоящего варианта, имя изменено</p>
     </div>
   </div>
-  <div class="pager">17 / 27</div>
+  <div class="pager">17 / 33</div>
 </div></section>
 
 <!-- 7. Решает команда -->
@@ -1675,7 +1744,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       </div>
     </div>
   </div>
-  <div class="pager">18 / 27</div>
+  <div class="pager">18 / 33</div>
 </div></section>
 
 <!-- 8. Как учится -->
@@ -1709,7 +1778,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       </div>
     </div>
   </div>
-  <div class="pager">19 / 27</div>
+  <div class="pager">19 / 33</div>
 </div></section>
 
 <!-- 15. Автопилот -->
@@ -1723,7 +1792,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="panel lv" style="height:100%"><div class="cap">Уровень 3</div><h4>Полный цикл до оплаты</h4><p>ИИ ведёт человека от кодового слова до счёта. Тех, у кого доход выше порога, передаёт на созвон с напоминанием накануне.</p></div>
     </div>
   </div>
-  <div class="pager">20 / 27</div>
+  <div class="pager">20 / 33</div>
 </div></section>
 
 <!-- 9. Приоритет -->
@@ -1749,7 +1818,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="leaf"><div class="cond">денег пока нет</div><div class="panel res"><b>Прогрев</b>присылает, что посмотреть, и сам пишет снова через нужное время</div></div>
     </div>
   </div>
-  <div class="pager">21 / 27</div>
+  <div class="pager">21 / 33</div>
 </div></section>
 
 <!-- 10. Последнее слово -->
@@ -1775,7 +1844,7 @@ html.static .side path,html.static .route path{opacity:1!important}
     </div>
     <div class="wg-res">Человек быстрее принимает решение, и время до сделки сокращается</div>
   </div>
-  <div class="pager">22 / 27</div>
+  <div class="pager">22 / 33</div>
 </div></section>
 
 <!-- 10a. CRM -->
@@ -1801,7 +1870,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       </div>
     </div>
   </div>
-  <div class="pager">23 / 27</div>
+  <div class="pager">23 / 33</div>
 </div></section>
 
 <!-- 10b. Служба заботы -->
@@ -1824,7 +1893,7 @@ html.static .side path,html.static .route path{opacity:1!important}
     </div>
     <div class="wg-res">Как служба заботы: сбой исправлен, а человек получил то, что ждал</div>
   </div>
-  <div class="pager">24 / 27</div>
+  <div class="pager">24 / 33</div>
 </div></section>
 
 <!-- 12. Дашборд -->
@@ -1851,7 +1920,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="mchips"><span>Изменить воронку</span><span>Поправить анкету</span><span>Подправить оффер</span><span>На какую тему снимать больше контента</span></div>
       <p>Совет на каждый этап. Внедрили — отмечаете кнопкой «Внедрено»</p></div>
   </div>
-  <div class="pager">25 / 27</div>
+  <div class="pager">25 / 33</div>
 </div></section>
 
 <!-- 11. Клиенты и доработки -->
@@ -1865,7 +1934,159 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="rw"><span class="rw-ic"><svg class="i" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span><b class="rw-t">Допродажи</b><p class="rw-p">Опираясь на <b>все домашки, разборы и комментарии</b> на платформе, понимает, кому из учеников <b>какой следующий продукт подходит</b>. Предлагает его исходя из <b>конкретных результатов, запросов и сложностей</b>, которые возникли у человека в момент обучения</p></div>
     </div>
   </div>
-  <div class="pager">26 / 27</div>
+  <div class="pager">26 / 33</div>
+</div></section>
+
+<!-- 16Расходы. Выгода -->
+<section class="frame"><div class="slide">
+  <div class="top"><span class="step"><span class="num">26</span><b>Расходы</b></span><span></span></div>
+  <h2 style="max-width:none" data-a="fu" style="--d:0.2s;">Меньше людей на окладе и подписок</h2>
+  <p class="h2sub" data-a="fu" style="--d:0.45s;">Не нужно нанимать менеджеров, специалистов по настройке и платить за десяток сервисов. Всё стоит не дороже подписки на Claude</p>
+  <div class="body st-body">
+    <div class="st"><div class="st-b">
+        <div class="st-w" data-a="fu" style="--d:0.9s;"><i></i><span>Было</span></div>
+        <p class="st-s" data-a="fu" style="--d:1.05s;">Школа каждый месяц платит людям и сервисам</p>
+        <div class="panel st-c" data-a="fu" style="--d:1.2s;"><div class="cap">Оклады</div><div class="st-chips"><span class="st-x" style="--sd:2.90s">Директ‑менеджер</span><span class="st-x" style="--sd:2.98s">Менеджер в Telegram</span><span class="st-x" style="--sd:3.06s">Специалист по SaleBot</span><span class="st-x" style="--sd:3.14s">Специалист по GetCourse</span></div>
+     <div class="cap" style="margin-top:6px">Подписки</div><div class="st-chips"><span class="st-x" style="--sd:3.20s">SaleBot</span><span class="st-x" style="--sd:3.28s">BotHelp</span><span class="st-x" style="--sd:3.36s">ManyChat</span><span class="st-x" style="--sd:3.44s">amoCRM</span><span class="st-x" style="--sd:3.52s">Сервис рассылок</span></div></div>
+      </div><div class="st-b">
+        <div class="st-w" data-a="fu" style="--d:2.6s;"><i></i><span>Подключили ИИ‑отдел продаж</span></div>
+        <p class="st-s" data-a="fu" style="--d:2.75s;">Рутину забирает система</p>
+        <div class="panel st-c" data-a="fu" style="--d:2.9s;"><div class="st-ok" data-a="fu" style="--d:3.2s;"><svg class="i st-ok-i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Отвечает в директе и Telegram</span></div><div class="st-ok" data-a="fu" style="--d:3.4000000000000004s;"><svg class="i st-ok-i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Догревает рассылками</span></div><div class="st-ok" data-a="fu" style="--d:3.6s;"><svg class="i st-ok-i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Ставит теги в CRM</span></div><div class="st-ok" data-a="fu" style="--d:3.8000000000000003s;"><svg class="i st-ok-i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Собирает отчёт за день</span></div></div>
+      </div><div class="st-b st-end">
+        <div class="st-w" data-a="fu" style="--d:4.3s;"><i></i><span>Стало</span></div>
+        <p class="st-s" data-a="fu" style="--d:4.45s;">Команда только одобряет ответы</p>
+        <div class="panel st-c" data-a="fu" style="--d:4.6s;"><div class="st-big"><span>Остаётся</span><b>1 подписка</b><span>на Claude</span></div><div class="stamp good" data-a="stamp" style="--d:5.5s;right:-16px;bottom:-20px">минус оклады и сервисы</div></div>
+      </div></div>
+    <div class="kcond st-cond">Пример условный</div>
+  </div>
+  <div class="pager">27 / 33</div>
+</div></section>
+
+<!-- 16Независимость. Выгода -->
+<section class="frame"><div class="slide">
+  <div class="top"><span class="step"><span class="num">27</span><b>Независимость</b></span><span></span></div>
+  <h2 style="max-width:none" data-a="fu" style="--d:0.2s;">Продажи не уходят вместе с менеджером</h2>
+  <p class="h2sub" data-a="fu" style="--d:0.45s;">Ваш стиль, знания и правила команды остаются в системе, а ИИ с каждой правкой пишет точнее</p>
+  <div class="body st-body">
+    <div class="st"><div class="st-b">
+        <div class="st-w" data-a="fu" style="--d:0.9s;"><i></i><span>Март</span></div>
+        <p class="st-s" data-a="fu" style="--d:1.05s;">Менеджер поправил ответ ИИ</p>
+        <div class="panel st-c" data-a="fu" style="--d:1.2s;"><div class="st-note"><span class="cap">Что учесть в ответе</span><b>Не называем это курсом. У нас программа</b></div>
+     <div class="st-saved" data-a="pop" style="--d:2s;"><svg class="i st-ok-i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Правило сохранено в системе</div></div>
+      </div><div class="st-b">
+        <div class="st-w" data-a="fu" style="--d:2.6s;"><i></i><span>Май</span></div>
+        <p class="st-s" data-a="fu" style="--d:2.75s;">Менеджер уволился</p>
+        <div class="panel st-c" data-a="fu" style="--d:2.9s;"><div class="st-who"><span class="crm-av" style="background:var(--mute)"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></span><div><b>Менеджер продаж</b><span>знал все правила и стиль школы</span></div></div><div class="stamp " data-a="stamp" style="--d:3.6s;right:24px;bottom:-18px">уволился</div></div>
+      </div><div class="st-b st-end">
+        <div class="st-w" data-a="fu" style="--d:4.3s;"><i></i><span>Июнь</span></div>
+        <p class="st-s" data-a="fu" style="--d:4.45s;">Новый клиент получает ответ в том же стиле</p>
+        <div class="panel st-c" data-a="fu" style="--d:4.6s;"><div class="bub in">Сколько длится ваш курс?</div><div class="bub outb">Подскажу! Это программа, а не курс в записи. Расскажите, чем вы сейчас занимаетесь?</div><div class="stamp good" data-a="stamp" style="--d:5.5s;right:-16px;bottom:-20px">правило осталось</div></div>
+      </div></div>
+    <div class="kcond st-cond">Пример условный</div>
+  </div>
+  <div class="pager">28 / 33</div>
+</div></section>
+
+<!-- 16Ни один клиент не теряется. Выгода -->
+<section class="frame"><div class="slide">
+  <div class="top"><span class="step"><span class="num">28</span><b>Ни один клиент не теряется</b></span><span></span></div>
+  <h2 style="max-width:none" data-a="fu" style="--d:0.2s;">Все переписки в одном окне</h2>
+  <p class="h2sub" data-a="fu" style="--d:0.45s;">ИИ знает про каждого всё, ответ готов сразу, а сверху те, кто ближе к покупке</p>
+  <div class="body st-body">
+    <div class="st"><div class="st-b">
+        <div class="st-w" data-a="fu" style="--d:0.9s;"><i></i><span>23:40</span></div>
+        <p class="st-s" data-a="fu" style="--d:1.05s;">Ночью пишут двое из разных каналов</p>
+        <div class="panel st-c" data-a="fu" style="--d:1.2s;"><div class="st-lab"><svg class="lg" viewBox="0 0 24 24"><defs><linearGradient id="igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEC564"/><stop offset=".45" stop-color="#F0346E"/><stop offset="1" stop-color="#7A3FE4"/></linearGradient></defs><rect width="24" height="24" rx="7" fill="url(#igg)"/><rect x="5.5" y="5.5" width="13" height="13" rx="4" fill="none" stroke="oklch(0.99 0.003 262)" stroke-width="1.8"/><circle cx="12" cy="12" r="3.1" fill="none" stroke="oklch(0.99 0.003 262)" stroke-width="1.8"/><circle cx="16.1" cy="7.9" r="1" fill="oklch(0.99 0.003 262)"/></svg>Марина · директ Instagram</div><div class="bub in">Сколько стоит обучение?</div>
+     <div class="st-lab"><svg class="lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#2AABEE"/><path d="M5.3 11.7l11.4-4.4c.6-.2 1.1.1.9 1l-1.9 9.1c-.1.6-.5.8-1.1.5l-2.9-2.2-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.4-4.9c.2-.2 0-.3-.3-.1l-6.7 4.2-2.9-.9c-.6-.2-.6-.6.1-.9z" fill="oklch(0.99 0.003 262)"/></svg>Ирина · Telegram</div><div class="bub in">А можно в рассрочку?</div></div>
+      </div><div class="st-b">
+        <div class="st-w" data-a="fu" style="--d:2.6s;"><i></i><span>9:00</span></div>
+        <p class="st-s" data-a="fu" style="--d:2.75s;">Утром команда открывает одно окно</p>
+        <div class="panel st-c" data-a="fu" style="--d:2.9s;"><div class="st-in top" data-a="fu" style="--d:3.2s;"><span class="crm-av" style="background:var(--c-ig)">М</span><div><b>Марина К. <em>ближе к покупке</em></b><span>дошла до анкеты · ответ готов</span></div></div>
+     <div class="st-in" data-a="fu" style="--d:3.45s;"><span class="crm-av" style="background:var(--c-tg)">И</span><div><b>Ирина Л.</b><span>спросила про рассрочку · ответ готов</span></div></div></div>
+      </div><div class="st-b st-end">
+        <div class="st-w" data-a="fu" style="--d:4.3s;"><i></i><span>9:05</span></div>
+        <p class="st-s" data-a="fu" style="--d:4.45s;">Обе получили ответ до начала рабочего дня</p>
+        <div class="panel st-c" data-a="fu" style="--d:4.6s;"><div class="st-sent"><svg class="i st-ok-i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Марине отправлено</div><div class="st-sent"><svg class="i st-ok-i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Ирине отправлено</div><div class="stamp good" data-a="stamp" style="--d:5.4s;right:-16px;bottom:-20px">никто не потерялся</div></div>
+      </div></div>
+    <div class="kcond st-cond">Пример условный</div>
+  </div>
+  <div class="pager">29 / 33</div>
+</div></section>
+
+<!-- 16Больше продаж. Выгода -->
+<section class="frame"><div class="slide">
+  <div class="top"><span class="step"><span class="num">29</span><b>Больше продаж</b></span><span></span></div>
+  <h2 style="max-width:none" data-a="fu" style="--d:0.2s;">Каждого догревают лично</h2>
+  <p class="h2sub" data-a="fu" style="--d:0.45s;">Рассылка под конкретного человека, поэтому решение о покупке он принимает быстрее</p>
+  <div class="body st-body">
+    <div class="st"><div class="st-b">
+        <div class="st-w" data-a="fu" style="--d:0.9s;"><i></i><span>Вторник</span></div>
+        <p class="st-s" data-a="fu" style="--d:1.05s;">Марина ушла с вебинара и заявку не оставила</p>
+        <div class="panel st-c" data-a="fu" style="--d:1.2s;"><div class="st-lab"><svg class="lg" viewBox="0 0 24 24"><rect width="24" height="24" rx="7" fill="oklch(0.6 0.13 160)"/><rect x="5" y="8" width="10" height="8" rx="2" fill="none" stroke="oklch(0.99 0.003 262)" stroke-width="1.7"/><path d="M15 11l4-2.3v6.6L15 13" fill="none" stroke="oklch(0.99 0.003 262)" stroke-width="1.7" stroke-linejoin="round"/></svg>Вебинар «Клиенты из соцсетей»</div><div class="st-meter"><i style="width:58%"></i></div><p class="st-p">смотрела 52 минуты из 90</p></div>
+      </div><div class="st-b">
+        <div class="st-w" data-a="fu" style="--d:2.6s;"><i></i><span>Среда</span></div>
+        <p class="st-s" data-a="fu" style="--d:2.75s;">Вместо общей рассылки ей приходит личное сообщение</p>
+        <div class="panel st-c" data-a="fu" style="--d:2.9s;"><div class="st-gen"><span class="st-x" style="--sd:3.6s">Осталось 3 места, успейте!</span></div>
+     <div class="bub outb" data-a="fu" style="--d:3.9000000000000004s;">Марина, вы ушли с эфира до части про шапку профиля. Вот короткий разбор, как психологу объяснить, с каким запросом к ней идти</div></div>
+      </div><div class="st-b st-end">
+        <div class="st-w" data-a="fu" style="--d:4.3s;"><i></i><span>Четверг</span></div>
+        <p class="st-s" data-a="fu" style="--d:4.45s;">Марина пишет сама</p>
+        <div class="panel st-c" data-a="fu" style="--d:4.6s;"><div class="st-lab"><svg class="lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#2AABEE"/><path d="M5.3 11.7l11.4-4.4c.6-.2 1.1.1.9 1l-1.9 9.1c-.1.6-.5.8-1.1.5l-2.9-2.2-1.4 1.4c-.2.2-.3.3-.6.3l.2-3 5.4-4.9c.2-.2 0-.3-.3-.1l-6.7 4.2-2.9-.9c-.6-.2-.6-.6.1-.9z" fill="oklch(0.99 0.003 262)"/></svg>Марина · Telegram</div><div class="bub in">Здравствуйте! Хочу на разбор</div><div class="stamp good" data-a="stamp" style="--d:5.4s;right:-16px;bottom:-20px">решила быстрее</div></div>
+      </div></div>
+    <div class="kcond st-cond">Пример условный</div>
+  </div>
+  <div class="pager">30 / 33</div>
+</div></section>
+
+<!-- 16Прозрачность. Выгода -->
+<section class="frame"><div class="slide">
+  <div class="top"><span class="step"><span class="num">30</span><b>Прозрачность</b></span><span></span></div>
+  <h2 style="max-width:none" data-a="fu" style="--d:0.2s;">Видно, где воронка теряет людей</h2>
+  <p class="h2sub" data-a="fu" style="--d:0.45s;">Каждое утро система разбирает вчерашний день и говорит, что усилить</p>
+  <div class="body st-body">
+    <div class="st"><div class="st-b">
+        <div class="st-w" data-a="fu" style="--d:0.9s;"><i></i><span>8:00</span></div>
+        <p class="st-s" data-a="fu" style="--d:1.05s;">Пришёл разбор вчерашнего дня</p>
+        <div class="panel st-c" data-a="fu" style="--d:1.2s;"><div class="st-fn "><span>Пришли в бот</span><b>100%</b><div class="st-meter"><i style="width:100%"></i></div></div><div class="st-fn bad"><span>Начали анкету</span><b>23%</b><div class="st-meter"><i style="width:23%"></i></div></div><div class="st-fn "><span>Дошли до результата</span><b>41%</b><div class="st-meter"><i style="width:41%"></i></div></div><p class="st-p st-red">теряем больше всего между ботом и анкетой</p></div>
+      </div><div class="st-b">
+        <div class="st-w" data-a="fu" style="--d:2.6s;"><i></i><span>8:05</span></div>
+        <p class="st-s" data-a="fu" style="--d:2.75s;">Система советует, что усилить</p>
+        <div class="panel st-c" data-a="fu" style="--d:2.9s;"><div class="st-note"><span class="cap">Совет</span><b>Поправить анкету: сократить первый шаг</b></div>
+     <div class="btn pri st-btn" data-a="pop" style="--d:3.7s;">Внедрено</div></div>
+      </div><div class="st-b st-end">
+        <div class="st-w" data-a="fu" style="--d:4.3s;"><i></i><span>Через неделю</span></div>
+        <p class="st-s" data-a="fu" style="--d:4.45s;">Видно, сработал совет или нет</p>
+        <div class="panel st-c" data-a="fu" style="--d:4.6s;"><div class="st-fn good"><span>Начали анкету</span><b>23% → 31%</b><div class="st-meter"><i style="width:31%"></i></div></div><p class="st-p">цифры по тому же этапу до и после правки</p><div class="stamp good" data-a="stamp" style="--d:5.4s;right:-16px;bottom:-20px">видно, что сработало</div></div>
+      </div></div>
+    <div class="kcond st-cond">Пример условный</div>
+  </div>
+  <div class="pager">31 / 33</div>
+</div></section>
+
+<!-- 16Забота. Выгода -->
+<section class="frame"><div class="slide">
+  <div class="top"><span class="step"><span class="num">31</span><b>Забота</b></span><span></span></div>
+  <h2 style="max-width:none" data-a="fu" style="--d:0.2s;">Сбои не стоят вам клиентов</h2>
+  <p class="h2sub" data-a="fu" style="--d:0.45s;">Что не пришло или не открылось, чинится, а человек получает своё. По той же схеме работают техотдел и допродажи</p>
+  <div class="body st-body">
+    <div class="st"><div class="st-b">
+        <div class="st-w" data-a="fu" style="--d:0.9s;"><i></i><span>21:15</span></div>
+        <p class="st-s" data-a="fu" style="--d:1.05s;">У клиента не пришёл гайд</p>
+        <div class="panel st-c" data-a="fu" style="--d:1.2s;"><div class="st-lab"><svg class="lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#2AABEE"/><rect x="6.5" y="8.5" width="11" height="8.5" rx="2.5" fill="oklch(0.99 0.003 262)"/><circle cx="9.8" cy="12.6" r="1.2" fill="#2AABEE"/><circle cx="14.2" cy="12.6" r="1.2" fill="#2AABEE"/><path d="M12 8.5V6.3" stroke="oklch(0.99 0.003 262)" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="5.7" r="1.1" fill="oklch(0.99 0.003 262)"/></svg>Telegram‑бот</div><div class="bub in">Здравствуйте, мне не пришёл гайд</div></div>
+      </div><div class="st-b">
+        <div class="st-w" data-a="fu" style="--d:2.6s;"><i></i><span>21:16</span></div>
+        <p class="st-s" data-a="fu" style="--d:2.75s;">Система ставит задачу, вы одобряете</p>
+        <div class="panel st-c" data-a="fu" style="--d:2.9s;"><div class="st-note"><span class="cap">Задача</span><b>Гайд не отправляется после кнопки «Хочу гайд»</b></div>
+     <div class="btn pri st-btn" data-a="pop" style="--d:3.6s;">Одобрить</div>
+     <div class="sz-loop" data-a="fu" style="--d:4s;"><span>Правит</span><i>→</i><span>Тестирует</span></div></div>
+      </div><div class="st-b st-end">
+        <div class="st-w" data-a="fu" style="--d:4.3s;"><i></i><span>21:40</span></div>
+        <p class="st-s" data-a="fu" style="--d:4.45s;">Человек получил своё</p>
+        <div class="panel st-c" data-a="fu" style="--d:4.6s;"><div class="bub outb">Отправили ещё раз. Всё открывается?</div><div class="bub in">Да, спасибо!</div><div class="stamp good" data-a="stamp" style="--d:5.4s;right:-16px;bottom:-20px">клиент остался</div></div>
+      </div></div>
+    <div class="kcond st-cond">Пример условный</div>
+  </div>
+  <div class="pager">32 / 33</div>
 </div></section>
 
 <!-- 16. Итог -->
@@ -1882,7 +2103,7 @@ html.static .side path,html.static .route path{opacity:1!important}
       <div class="panel out"><div class="cap">Забота</div><h4>Сбои не стоят вам клиентов</h4><p>Что не пришло или не открылось, чинится, а человек получает своё. По той же схеме работают техотдел и допродажи</p></div>
     </div>
   </div>
-  <div class="pager">27 / 27</div>
+  <div class="pager">33 / 33</div>
 </div></section>
 
 </div>
